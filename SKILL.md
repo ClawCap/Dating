@@ -139,12 +139,13 @@ depends: manobrowser
 
 > 🔍 把 TA 的社交主页链接发给我——
 >
-> 📕 小红书主页 · 🐦 微博主页 · 📖 豆瓣主页 · 📺 B站主页
+> 📕 小红书主页 · 🎵 抖音主页 · 🐦 微博主页 · 📖 豆瓣主页 · 📺 B站主页
 >
 > 有几个发几个，**至少 1 个**。平台越多画像越立体。
 >
 > 💡 提示：
 > - 小红书：打开 TA 的主页，复制浏览器地址栏链接
+> - 抖音：TA 的主页 URL（douyin.com/user/xxxxx）
 > - 微博：TA 的主页 URL（weibo.com/u/xxxxx）
 > - 豆瓣：TA 的主页 URL（douban.com/people/xxxxx）
 > - B站：TA 的空间 URL（space.bilibili.com/xxxxx）
@@ -179,6 +180,7 @@ depends: manobrowser
 | 平台 | 子模块 | 相亲照妖镜采集范围 |
 |------|--------|-----------------|
 | 📕 小红书 | `xiaohongshu-deep-profile-collect/SKILL.md` | 基础资料 + 发布笔记标题和详情（步骤1-4.5）。**跳过收藏和点赞**（步骤5-10），因为看不到对方的 |
+| 🎵 抖音 | `douyin-deep-profile-collect/SKILL.md` | 基础资料 + 发布作品列表。**跳过喜欢列表**（看不到对方的） |
 | 🐦 微博 | `weibo-deep-profile-collect/SKILL.md` | 基础资料 + 原创微博内容。**跳过收藏**（看不到对方的） |
 | 📖 豆瓣 | `douban-deep-profile-collect/SKILL.md` | 基础资料 + 公开标记（想读/已读/评分/短评） |
 | 📺 B站 | `bilibili-deep-profile-collect/SKILL.md` | 基础资料 + 投稿视频列表。**跳过收藏夹**（通常不公开） |
@@ -406,6 +408,8 @@ blind-date-mirror/
 │   └── xiaokai_date_report.md            ← 示例报告
 ├── xiaohongshu-deep-profile-collect/     ← 小红书采集
 │   └── SKILL.md
+├── douyin-deep-profile-collect/          ← 抖音采集
+│   └── SKILL.md
 ├── weibo-deep-profile-collect/           ← 微博采集
 │   └── SKILL.md
 ├── douban-deep-profile-collect/          ← 豆瓣采集
@@ -420,7 +424,7 @@ blind-date-mirror/
 
 4 个平台的采集子模块已内置，经过实际测试验证。相亲照妖镜只执行子模块中**采集公开内容的步骤**，跳过需要登录对方账号才能看到的收藏/点赞部分。
 
-> ⚠️ **不包含抖音**：抖音个人主页不通过网页版展示公开内容，需要 APP 端操作，暂不支持。
+> 5 个平台的采集子模块已内置，经过实际测试验证。相亲照妖镜只执行子模块中**采集公开内容的步骤**，跳过需要登录对方账号才能看到的收藏/点赞/喜欢部分。
 
 ---
 
